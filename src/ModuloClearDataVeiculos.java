@@ -1,9 +1,6 @@
 
-import br.com.sankhya.extensions.eventoprogramavel.EventoProgramavelJava;
-import br.com.sankhya.jape.event.*;
-import br.com.sankhya.jape.vo.DynamicVO;
-
-import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.sql.Timestamp;
 
 import br.com.sankhya.extensions.actionbutton.AcaoRotinaJava;
 import br.com.sankhya.extensions.actionbutton.ContextoAcao;
@@ -19,7 +16,11 @@ public class ModuloClearDataVeiculos implements AcaoRotinaJava {
         Registro[] linhas = contexto.getLinhas();
 
         for(Registro registro: linhas) {
-            BigDecimal id = (BigDecimal)contexto.getParam("id");
+            // idreferencia
+            Timestamp dhSaida = (Timestamp) registro.getCampo("DHSAIDA");
+            BigInteger codVeiculo =(BigInteger) registro.getCampo("CODVEICULO");
+            BigInteger codEmp = (BigInteger) registro.getCampo("CODEMP");
+
             
         }
     }
